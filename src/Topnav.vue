@@ -1,19 +1,20 @@
 <template lang="html">
   <div class="top-sidenav">
-    <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-menu-item index="1">Processing Center</el-menu-item>
-      <el-submenu index="2">
-        <template slot="title">Workspace</template>
-        <el-menu-item index="2-1">item one</el-menu-item>
-        <el-menu-item index="2-2">item two</el-menu-item>
-        <el-menu-item index="2-3">item three</el-menu-item>
-      </el-submenu>
-      <el-menu-item index="3"><a href="https://www.ele.me" target="_blank">Orders</a></el-menu-item>
+    <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal">
+      <router-link :to="{ name: 'Posts.index' }">
+        <el-menu-item index="1">Posts</el-menu-item>
+      </router-link>
+      <router-link :to="{ name: 'Posts.new' }">
+        <el-menu-item index="2">New Post</el-menu-item>
+      </router-link>
+      <el-menu-item index="3" @click.native="logout">Logout</el-menu-item>
     </el-menu>
   </div>
 </template>
 
 <script>
+  import UsersApi from './api/users.js'
+  import router from './router'
   export default {
     data () {
       return {
@@ -22,8 +23,11 @@
       }
     },
     methods: {
-      handleSelect (key, keyPath) {
-        console.log(key, keyPath)
+      logout () {
+        console.log('methods.logout')
+        UsersApi.logout(function (_response) {
+          router.push({ name: 'Users.sign_in' })
+        })
       }
     }
   }
