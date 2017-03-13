@@ -1,10 +1,6 @@
 <template lang="html">
   <div class="posts">
-    <el-table :data="posts" borderstyle="width: 100%">
-      <el-table-column prop=id align="center" width="100" label="id"></el-table-column>
-      <el-table-column prop=name align="left" width="250" label="Name"></el-table-column>
-      <el-table-column prop=content align="left" label="Content"></el-table-column>
-  </el-table>
+    <ic340-post :post='posts'></ic340-post>
   </div>
 </template>
 
@@ -18,6 +14,9 @@ export default {
       posts: null,
       error: null
     }
+  },
+  components: {
+    Ic340Post: require('./Post')
   },
   beforeRouteEnter (to, from, _next) {
     PostsApi.getPosts(_posts => {
