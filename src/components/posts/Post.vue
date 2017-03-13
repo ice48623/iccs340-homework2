@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     handleCurrentChange (row) {
-      if (this.$route.path === '/posts/') {
+      if (this.$route.path === '/posts/' || this.$route.path === '/posts') {
         this.$router.push('/posts/' + row.id)
       }
     }

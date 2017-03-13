@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import SignIn from '@/components/SignIn'
 import PostsIndex from '@/components/posts/Index.vue'
 import PostsShow from '@/components/posts/Show.vue'
+import PostsNew from '@/components/posts/New.vue'
 
 Vue.use(Router)
 
@@ -21,6 +22,11 @@ export default new Router({
       path: '/posts',
       name: 'Posts.index',
       component: PostsIndex
+    },
+    {
+      path: '/posts/new',
+      name: 'Posts.new',
+      component: PostsNew
     },
     {
       path: '/posts/:id',
