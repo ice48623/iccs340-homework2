@@ -5,11 +5,16 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+import store from './store'
 
 Vue.use(ElementUI)
 
 import Axios from 'axios'
 Vue.$http = Axios
+
+Axios.defaults.baseURL = 'https://iccs340-vue-api-auth.herokuapp.com/'
+Axios.defaults.headers.common.Accept = 'application/json'
+Axios.defaults.withCredentials = true
 
 Vue.config.productionTip = false
 
@@ -17,6 +22,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App },
   render: h => h(App)
