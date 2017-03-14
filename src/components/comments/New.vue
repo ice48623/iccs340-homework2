@@ -1,11 +1,14 @@
 <template lang="html">
   <div class="new-post">
-    <el-form label-width="120px" class="demo-ruleForm">
+    <el-form :label-position="labelPosition" label-width="120px" class="demo-ruleForm">
       <el-form-item label="Add Comment" prop="comment">
         <el-input type="text" v-model="comment.content" placeholder=""></el-input>
       </el-form-item>
-      <el-form-item>
+      <el-form-item class="comment">
         <el-button type="primary" @click.native="createComment">Save</el-button>
+        <router-link :to="{ name: 'Posts.index' }">
+          <el-button type="primary">Back</el-button>
+        </router-link>
       </el-form-item>
     </el-form>
   </div>
@@ -20,6 +23,7 @@ export default {
   name: 'new-comment',
   data () {
     return {
+      labelPosition: 'left',
       comment: {
         content: ''
       }
@@ -50,4 +54,8 @@ export default {
 </script>
 
 <style lang="css">
+  .new-post {
+    width: 60%;
+    margin: auto;
+  }
 </style>

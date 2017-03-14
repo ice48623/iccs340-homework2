@@ -29,4 +29,9 @@ export default {
 </script>
 
 <style lang="css">
+.post {
+  width: 70%;
+  margin: 3% auto 0 auto;
+
+}
 </style>

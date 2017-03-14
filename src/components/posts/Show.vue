@@ -11,6 +11,7 @@
 <script>
 import PostsApi from '../../api/posts.js'
 import CommentsApi from '../../api/comments.js'
+import UsersApi from '../../api/users.js'
 
 export default {
   name: 'post',
@@ -26,6 +27,9 @@ export default {
       error: null
     }
   },
+  beforeRouteEnter (to, from, _next) {
+    UsersApi.checkLoggedIn()
+  },
   created () {
     // fetch the data when the view is created and the data is
     // already being observed
@@ -39,7 +43,6 @@ export default {
     fetchData () {
       PostsApi.getPost(this.$route.params.id, _post => {
         this.post = [_post]
-        console.log(this.post)
         CommentsApi.getComments(_post.id, _comments => {
           this.comments = _comments
         })

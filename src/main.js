@@ -6,6 +6,7 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import store from './store'
+import UsersApi from './api/users.js'
 
 Vue.use(ElementUI)
 
@@ -17,7 +18,7 @@ Axios.defaults.headers.common.Accept = 'application/json'
 Axios.defaults.withCredentials = true
 
 Vue.config.productionTip = false
-
+UsersApi.checkLoggedIn()
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

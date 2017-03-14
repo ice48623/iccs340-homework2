@@ -1,16 +1,16 @@
 <template lang="html">
   <div class="sign-in">
-    <el-form label-width="120px" class="demo-ruleForm">
-      <el-form-item label="Email" prop="pass">
-        <el-input type="email" v-model="email" placeholder="" auto-complete="off"></el-input>
-      </el-form-item>
-      <el-form-item label="Password" prop="pass">
-        <el-input type="password" v-model="password" placeholder="" auto-complete="off" @keyup.enter.native="login"></el-input>
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click.native="login">Login</el-button>
-      </el-form-item>
-    </el-form>
+    <el-card class="box-card">
+      <el-form label-width="70px" class="demo-ruleForm">
+        <el-form-item label="Email" prop="pass">
+          <el-input type="email" v-model="email" placeholder="" auto-complete="off"></el-input>
+        </el-form-item>
+        <el-form-item label="Password" prop="pass">
+          <el-input type="password" v-model="password" placeholder="" auto-complete="off" @keyup.enter.native="login"></el-input>
+        </el-form-item>
+      </el-form>
+      <el-button type="primary" @click.native="login">Login</el-button>
+    </el-card>
   </div>
 </template>
 
@@ -39,4 +39,8 @@ export default {
 </script>
 
 <style lang="css">
+.sign-in {
+  width: 25%;
+  margin: 10% auto 0 auto;
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- <div v-if="$store.getters.loggedIn"></div> -->
-    <ic-top-nav></ic-top-nav>
+    <ic-top-nav v-if="$store.getters.loggedIn"></ic-top-nav>
     <router-view></router-view>
   </div>
 </template>

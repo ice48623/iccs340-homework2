@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="posts">
+    <h1>All Posts</h1>
     <ic340-post :post='posts'></ic340-post>
   </div>
 </template>
