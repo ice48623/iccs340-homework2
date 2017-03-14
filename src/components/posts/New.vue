@@ -17,7 +17,6 @@
 <script>
 import PostsApi from '../../api/posts.js'
 import router from '../../router'
-import UsersApi from '../../api/users.js'
 
 export default {
   name: 'new-post',
@@ -28,9 +27,6 @@ export default {
         content: ''
       }
     }
-  },
-  beforeRouteEnter (to, from, _next) {
-    UsersApi.checkLoggedIn()
   },
   methods: {
     createPost () {

@@ -11,7 +11,6 @@
 <script>
 import PostsApi from '../../api/posts.js'
 import CommentsApi from '../../api/comments.js'
-import UsersApi from '../../api/users.js'
 
 export default {
   name: 'post',
@@ -26,9 +25,6 @@ export default {
       comments: [],
       error: null
     }
-  },
-  beforeRouteEnter (to, from, _next) {
-    UsersApi.checkLoggedIn()
   },
   created () {
     // fetch the data when the view is created and the data is

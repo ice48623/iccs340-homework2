@@ -1,12 +1,18 @@
 <template lang="html">
   <div class="top-sidenav">
     <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal">
-      <router-link :to="{ name: 'Posts.index' }">
-        <el-menu-item index="1">Posts</el-menu-item>
-      </router-link>
-      <router-link :to="{ name: 'Posts.new' }">
-        <el-menu-item index="2">New Post</el-menu-item>
-      </router-link>
+      <el-menu-item index="1">
+        <router-link :to="{ name: 'Posts.index' }">
+          <i class="el-icon-document"></i>
+          <span>All Posts</span>
+        </router-link>
+      </el-menu-item>
+      <el-menu-item index="2">
+        <router-link :to="{ name: 'Posts.new' }">
+          <i class="el-icon-plus"></i>
+          <span>New Post</span>
+        </router-link>
+      </el-menu-item>
       <el-menu-item index="3" @click.native="logout">Logout</el-menu-item>
     </el-menu>
   </div>
@@ -34,4 +40,7 @@
 </script>
 
 <style lang="css">
+  a {
+    text-decoration: none !important;
+  }
 </style>
