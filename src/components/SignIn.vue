@@ -9,7 +9,10 @@
           <el-input type="password" v-model="password" placeholder="" auto-complete="off" @keyup.enter.native="login"></el-input>
         </el-form-item>
       </el-form>
-      <el-button type="primary" @click.native="login">Login</el-button>
+      <div id="login-btn">
+        <el-button type="primary" @click.native="login">Login</el-button>
+      </div>
+
     </el-card>
   </div>
 </template>
@@ -40,7 +43,12 @@ export default {
 
 <style lang="css">
 .sign-in {
-  width: 25%;
+  width: 600px;
   margin: 10% auto 0 auto;
+}
+#login-btn {
+  width: auto;
+  float: right;
+  margin-bottom: 20px;
 }
 </style>

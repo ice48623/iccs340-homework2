@@ -1,8 +1,8 @@
 <template lang="html">
   <div class="new-post">
-    <el-form :label-position="labelPosition" label-width="120px" class="demo-ruleForm">
-      <el-form-item label="Add Comment" prop="comment">
-        <el-input type="text" v-model="comment.content" placeholder=""></el-input>
+    <el-form :label-position="labelPosition" class="demo-ruleForm">
+      <el-form-item prop="comment">
+        <el-input type="text" v-model="comment.content" placeholder="add comment"></el-input>
       </el-form-item>
       <el-form-item class="comment">
         <el-button type="primary" @click.native="createComment">Save</el-button>

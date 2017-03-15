@@ -13,7 +13,10 @@
           <span>New Post</span>
         </router-link>
       </el-menu-item>
-      <el-menu-item index="3" @click.native="logout">Logout</el-menu-item>
+      <el-menu-item index="3" @click.native="logout">
+        <i class="el-icon-circle-close"></i>
+        <span>Logout</span>
+      </el-menu-item>
     </el-menu>
   </div>
 </template>

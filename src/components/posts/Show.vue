@@ -1,9 +1,12 @@
 <template lang="html">
   <div class="post">
     <ic340-post :post='post'></ic340-post>
-    <div v-for="comment in comments">
-      <ic340-comment :comment='comment'></ic340-comment>
-    </div>
+    <h2>All Comments</h2>
+    <el-card class="box-card">
+      <div v-for="comment in comments">
+        <ic340-comment :comment='comment'></ic340-comment>
+      </div>
+    </el-card>
     <ic340-new-comment :post='post[0]'></ic340-new-comment>
   </div>
 </template>
@@ -49,4 +52,9 @@ export default {
 </script>
 
 <style lang="css">
+  .box-card {
+    width: 60%;
+    margin: 0 auto 20px auto;
+    text-align: left;
+  }
 </style>
